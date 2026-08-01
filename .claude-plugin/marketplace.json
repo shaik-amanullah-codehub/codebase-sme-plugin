@@ -1,0 +1,13 @@
+{
+  "name": "cognizant-team-marketplace",
+  "owner": {
+    "name": "Cognizant AI Engineering"
+  },
+  "plugins": [
+    {
+      "name": "codebase-sme",
+      "source": "./",
+      "description": "Senior-architect-level SME agent for our codebase — explains features, writes Jira user stories, and produces architecture/workflow/call-trace maps grounded in the real code."
+    }
+  ]
+}

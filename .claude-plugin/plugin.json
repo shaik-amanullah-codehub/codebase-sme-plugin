@@ -1,0 +1,9 @@
+{
+  "name": "codebase-sme",
+  "version": "1.0.0",
+  "description": "A senior-architect-level Subject Matter Expert for a codebase. Scans the project once into a structured knowledge file, then answers questions, writes Jira-format user stories, and produces architecture diagrams, workflow maps, and function call-traceability maps grounded in the actual code.",
+  "author": {
+    "name": "Cognizant AI Engineering"
+  },
+  "keywords": ["codebase", "documentation", "architecture", "onboarding", "sme"]
+}

@@ -1,0 +1,32 @@
+# Project Briefing (human-authored)
+
+> Copy this to the project root as `CLAUDE.md` and fill it in.
+> The `/sme-scan` command produces the machine-derived map (`.sme/codebase-knowledge.json`).
+> THIS file adds the human context a scan can't infer: history, intent, tribal knowledge.
+> Together they make the SME accurate. Claude reads this automatically every session.
+
+## What this system does
+(Plain English: the business problem it solves, who uses it, why it exists.)
+
+## Business context the code can't tell you
+- Why certain decisions were made (even the "bad" ones — the constraints behind them)
+- Regulatory / contractual constraints that shape the design
+- Which behaviors are load-bearing and must not change without sign-off
+
+## Domain glossary (authoritative)
+- Term — precise business meaning (override the scan's guesses here)
+
+## Known risky / fragile areas (authoritative)
+- Module/area — why it's risky, what has gone wrong before, who to consult
+
+## Conventions we actually follow
+- (Confirm or correct what the scan inferred — this version wins.)
+
+## Environments & how to run it
+- How to build/run/test locally; key config; where environments differ
+
+## Who owns what
+- Module/area — team or person to consult before significant changes
+
+## Anything the SME should always keep in mind
+- Standing instructions for how answers should be framed for this project
