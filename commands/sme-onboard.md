@@ -16,7 +16,7 @@ Produce a well-structured report (this one is meant to be saved and shared). Use
 
 **2. The 5-minute mental model** — the smallest set of concepts someone must hold in their head to reason about this codebase. Name the core modules and how they relate.
 
-**3. Architecture overview** — a compact Mermaid diagram of the main modules/layers (reuse the architecture logic), plus a short narrative.
+**3. Architecture overview** — a compact diagram of the main modules/layers (reuse the architecture command's logic and follow `${CLAUDE_PLUGIN_ROOT}/shared/diagram-rendering.md` to render it as a PNG at `.sme/diagrams/onboarding-architecture.png`), plus a short narrative. Embed/reference the PNG rather than raw Mermaid code.
 
 **4. Where things live** — a map from "I want to work on X" to "look in folder/file Y". Cover the common tasks for the audience.
 

@@ -33,8 +33,12 @@ PaymentService.Charge  (target)
   └─ AuditLogger.Record               [cross-cutting: logging]
 ```
 
-**Combined map (Mermaid `flowchart LR`):**
-Target node visually distinguished (e.g. a different shape/label). Upstream on the left, downstream on the right. Dashed edges for any call you inferred rather than confirmed.
+**Combined map (render to PNG):**
+Draft as Mermaid `flowchart LR` with the target node visually distinguished (e.g. a
+different shape/label). Upstream on the left, downstream on the right. Dashed edges for
+any call you inferred rather than confirmed. Then follow the rendering procedure in
+`${CLAUDE_PLUGIN_ROOT}/shared/diagram-rendering.md` to produce a PNG at
+`.sme/diagrams/<symbol-slug>-trace.png`. The image is the deliverable.
 
 **Impact summary:**
 - **Blast radius:** how many distinct callers/entry points ultimately reach this. High fan-in = risky to change.
@@ -43,3 +47,5 @@ Target node visually distinguished (e.g. a different shape/label). Upstream on t
 
 **⚠️ Trace completeness caveat:**
 State plainly how confident the caller list is. Static tracing can miss: dependency-injection-resolved calls, reflection, dynamic dispatch, event/message handlers, and calls from code not scanned. List the specific mechanisms in *this* codebase that could hide additional callers, so the reader knows where to double-check manually. Never present the caller list as guaranteed complete.
+
+**Deliverable:** `.sme/diagrams/<symbol-slug>-trace.png` (plus the `.mmd` source alongside it).

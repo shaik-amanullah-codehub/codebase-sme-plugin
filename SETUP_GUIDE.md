@@ -3,6 +3,15 @@
 ## Prerequisites
 - Each user needs Claude Code with an account/plan that includes it (individual Pro/Max, Team Premium seat, or Enterprise). Verify current plan details at https://support.claude.com — plans change.
 - Git, for sharing the knowledge file across the team.
+- **Node.js** (for rendering diagrams to PNG/JPG via Mermaid CLI). Most machines with Claude Code already have this. The plugin runs Mermaid CLI on demand via `npx`, so no separate install step is required — the first diagram render may take a little longer as `npx` fetches it.
+
+### If diagram rendering fails on first use
+Mermaid CLI needs a headless Chrome to render images. If you see an error like
+`Could not find Chrome`, run this once:
+```bash
+npx -y puppeteer browsers install chrome
+```
+Then re-run the command that produces the diagram. This is a one-time, per-machine setup step — it does not need to be repeated by every teammate if they hit it once each, but it's worth mentioning in your team rollout notes so nobody is surprised by it.
 
 ## A. First-time project setup (done once, by one person)
 

@@ -13,12 +13,16 @@ Act as the codebase-sme agent acting as a software architect. Produce an archite
 
 **Architecture at a glance** — a short paragraph: architectural style (layered, modular monolith, microservices, etc.), the main building blocks, and how a request generally flows.
 
-**Diagram (Mermaid `flowchart`):**
+**Diagram (render to PNG):**
+- First draft the Mermaid `flowchart` as described below, then follow the rendering
+  procedure in `${CLAUDE_PLUGIN_ROOT}/shared/diagram-rendering.md` to produce an actual
+  PNG at `.sme/diagrams/architecture-overview.png` (or a scoped slug if focus was narrowed).
+  Do not stop at printing Mermaid code — the image file is the deliverable.
 - Group nodes by layer using subgraphs (e.g. API / Application / Domain / Infrastructure / External).
 - Nodes = modules and significant external systems and datastores.
 - Edges = real dependencies from `module_interactions`.
 - Use a distinct edge style (dashed) for any edge whose confidence is `inferred`, and add a legend line explaining that dashed = inferred/unverified.
-- Keep it readable: if there are many modules, show the primary ones and note that minor/shared modules are omitted for clarity.
+- Keep it readable: if there are many modules, show the primary ones and note that minor/shared modules are omitted for clarity, or split into multiple diagrams per subsystem.
 
 Example skeleton (adapt to the real system — do not emit this literally):
 ```mermaid
@@ -50,3 +54,5 @@ flowchart TB
 **Architectural observations** — senior-level commentary: strengths, smells (e.g. a UI layer reaching straight into the DB, a god-module, circular dependencies), and what a newcomer should understand about *why* it's shaped this way.
 
 **Confidence & gaps** — state which relationships are confirmed vs inferred, and list any `open_questions` from the knowledge file relevant to the architecture.
+
+**Deliverable:** `.sme/diagrams/architecture-overview.png` (plus the `.mmd` source alongside it).

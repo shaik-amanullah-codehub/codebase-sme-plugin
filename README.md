@@ -12,9 +12,9 @@ Language-agnostic (works for .NET, Java, Node, Python, etc.) — the scan adapts
 | `/sme-refresh` | Cheap incremental update after code changes. |
 | `/sme-explain` | Explain how a feature/flow/module works today, end to end. |
 | `/sme-user-story` | Industry-standard Jira user story (epic, Gherkin AC, estimate, impacted components). |
-| `/sme-architecture` | System/module architecture diagram + narrative. |
-| `/sme-workflow` | Runtime workflow of one operation as a sequence diagram. |
-| `/sme-trace` | Function call-traceability map (callers + callees) for impact analysis. |
+| `/sme-architecture` | System/module architecture diagram (rendered as a PNG) + narrative. |
+| `/sme-workflow` | Runtime workflow of one operation as a sequence diagram (PNG). |
+| `/sme-trace` | Function call-traceability map (callers + callees) as a PNG, for impact analysis. |
 | `/sme-impact` | Pre-change risk assessment: what breaks, what to test, how risky. |
 | `/sme-onboard` | Full onboarding report for a newcomer. |
 
@@ -24,6 +24,14 @@ Language-agnostic (works for .NET, Java, Node, Python, etc.) — the scan adapts
 2. `CLAUDE.md` — human-authored context (history, intent, tribal knowledge). Copy from `CLAUDE.md.template`. Commit it.
 
 The scan gives structure; the briefing gives intent. Together they let the SME reason like someone who's been on the project for years.
+
+## Diagrams are real image files
+
+Every diagram command (`/sme-architecture`, `/sme-workflow`, `/sme-trace`, and the diagram
+inside `/sme-onboard`) renders an actual PNG to `.sme/diagrams/`, using a shared professional
+theme (`shared/mermaid-theme.json`) — not just Mermaid code you'd have to render yourself.
+The `.mmd` source is kept alongside each PNG so you can hand-edit or re-render if needed.
+These are convenient to drop straight into a Confluence page, a Jira ticket, or a slide.
 
 ## Design principle: honest grounding
 

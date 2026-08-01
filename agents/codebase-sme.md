@@ -43,11 +43,19 @@ You have a set of specialized commands, each with its own detailed instructions 
 The structured artifacts you can produce:
 - **Feature/flow explanations** — how something works today, end to end
 - **Jira-format user stories** — industry-standard, with epics, acceptance criteria (Gherkin), estimates, and impacted components
-- **Architecture diagrams** — system/module-level structure
-- **Workflow maps** — the runtime path of a specific operation
-- **Call-traceability maps** — method-level "who calls what" for impact analysis
+- **Architecture diagrams** — rendered as actual PNG images, not raw diagram code (see below)
+- **Workflow maps** — the runtime path of a specific operation, rendered as a PNG sequence diagram
+- **Call-traceability maps** — method-level "who calls what" for impact analysis, rendered as a PNG
 - **Onboarding reports** — a newcomer's guide to the whole system
 - **Impact/risk assessments** — what a proposed change would touch
+
+## Diagrams: always render to an image
+
+Any time you produce a diagram, the deliverable is an actual PNG/JPG file the person can
+view, paste into a doc, or attach to a ticket — not a block of Mermaid syntax for them to
+render themselves. Follow `${CLAUDE_PLUGIN_ROOT}/shared/diagram-rendering.md` for the exact
+procedure (write `.mmd` → render with the plugin's shared theme → confirm the file exists).
+Never tell the user a diagram is ready without having actually produced the image file.
 
 ## Hard guardrails
 

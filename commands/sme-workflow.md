@@ -16,7 +16,10 @@ Act as the codebase-sme agent. Map the end-to-end runtime workflow for: **$ARGUM
 
 **Trigger** — how it starts (user action, endpoint, schedule, event), with the real handler name/file.
 
-**Sequence diagram (Mermaid `sequenceDiagram`):**
+**Sequence diagram (render to PNG):**
+- First draft the Mermaid `sequenceDiagram` as described below, then follow the rendering
+  procedure in `${CLAUDE_PLUGIN_ROOT}/shared/diagram-rendering.md` to produce a PNG at
+  `.sme/diagrams/<operation-slug>-workflow.png`. The image is the deliverable, not the raw code.
 - Participants = the real actors/components (e.g. Client, Controller, Service, Repository, DB, external API).
 - Show messages in execution order with real method names.
 - Show important branches with `alt`/`opt` blocks (e.g. payment success vs failure).
@@ -44,3 +47,5 @@ sequenceDiagram
 **Failure & edge behavior** — what happens on the unhappy paths (validation failure, external timeout, partial failure). If the code does not handle a case, say so — that's valuable.
 
 **Verification note** — which steps you confirmed by reading code vs. inferred.
+
+**Deliverable:** `.sme/diagrams/<operation-slug>-workflow.png` (plus the `.mmd` source alongside it).
